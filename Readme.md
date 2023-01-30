@@ -47,7 +47,8 @@ JsonExp -u [目标] -l [LDAP服务地址]  -f fastjson.txt
 
 ### LDAP检测
 
-若为**内网环境**/**目标无法DNS解析**时，可使用工具https://github.com/WhiteHSBG/JNDIExploit在**本地/云服务器**起一个LDAP服务
+若为**内网环境**/**目标无法DNS解析**时，可使用工具在**本地/云服务器**起一个LDAP服务
+https://github.com/WhiteHSBG/JNDIExploit
 
 ![](4.png)
 将**域名**换成**IP:端口**即可（上图中使用的是8090作为LDAP服务端口）
