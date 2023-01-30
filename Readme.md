@@ -64,9 +64,9 @@ https://github.com/WhiteHSBG/JNDIExploit
 **格式：** `{.........$type$://$ip$/路径....}#注释内容`
 
 ```
-$type$	用于指定ldap或rmi服务类型
-$ip$	用于指定ldap地址或rmi地址
-路径	   若LDAP服务器地址为IP时，需要通过不同的路径来定位触发漏洞的payload
+$type$  用于指定ldap或rmi服务类型
+$ip$    用于指定ldap地址或rmi地址
+路径    若LDAP服务器地址为IP时，需要通过不同的路径来定位触发漏洞的payload
 ```
 
 
