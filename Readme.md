@@ -24,16 +24,29 @@
 | -r   | --rmi     | 指定rmi地址                                      | -r xxx.xxx.xxx:8080                 |
 | -c   | --cookie  | 指定cookie值                                     | --cookie "name=xxx;sessionid=xxxxx" |
 
-检测单个站点
+**windows系统**
 
 ```
+在JsonExp.exe目录打开cmd界面
+
+检测单个站点:
 JsonExp -u [目标] -l [LDAP服务地址]
-```
 
-根据文本检测多个站点
-
-```
+根据文本检测多个站点:
 JsonExp -uf [目标.txt] -l [LDAP服务地址]
+```
+
+**Linux系统**
+
+```
+添加权限:
+chmod +x JsonExp
+
+检测单个站点:
+./JsonExp -u [目标] -l [LDAP服务地址]
+
+根据文本检测多个站点:
+./JsonExp -uf [目标.txt] -l [LDAP服务地址]
 ```
 
 
@@ -87,14 +100,10 @@ $ip$	用于指定ldap地址或rmi地址
 4. 若payload为多行，则需将其中的换行符删去，保证一个payload占据一行
 ```
 
-## 输出结果
+### 结果展示功能
 
-执行程序后，将会在result目录下生成`域名.html`或`ip.html`文件
+输出结果参考自`xray`，模板路径为`template/report.html`，请勿删除该文件
 
-
-
-输出结果参考自xray report信息，模板保存路径`template/report.html`，请勿删除该文件
-
-
+执行程序后，将会在`result`目录下生成`域名.html`或`ip.html`文件
 
 ![](img/7.png)
