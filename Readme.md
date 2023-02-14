@@ -4,7 +4,7 @@
 
 **项目：** https://github.com/smallfox233/JsonExp
 
-**版本：** 1.2
+**版本：** 1.3
 
 ```
 1. 根据现有payload，检测目标是否存在fastjson或jackson漏洞（工具仅用于检测漏洞）
@@ -18,6 +18,8 @@
 | ---- | --------- | ------------------------------------------------ | ----------------------------------- |
 | -u   | --url     | 指定目标url                                      | -u http://www.test.com              |
 | -uf  | --urlfile | 指定目标url文档，每行一个url                     | -uf url.txt                         |
+| -req | --request | 指定请求包                                       | -req request.txt                    |
+| -to  | --timeout | 指定请求超时时长，默认为5秒                      | -to 8                               |
 | -f   | --file    | 指定payload文本路径，默认为template/fastjson.txt | -f payload.txt                      |
 | -t   | --type    | 指定HTTP请求类型，默认为post                     | -t get                              |
 | -l   | --ldap    | 指定ldap地址                                     | -l xxx.xxx.xxx:8080                 |
@@ -32,6 +34,9 @@
 检测单个站点:
 JsonExp -u [目标] -l [LDAP服务地址]
 
+根据请求包检测单个站点：
+JsonExp -req [目标.txt] -l [LDAP服务地址]
+
 根据文本检测多个站点:
 JsonExp -uf [目标.txt] -l [LDAP服务地址]
 ```
@@ -44,6 +49,9 @@ chmod +x JsonExp
 
 检测单个站点:
 ./JsonExp -u [目标] -l [LDAP服务地址]
+
+根据请求包检测单个站点：
+./JsonExp -req [目标.txt] -l [LDAP服务地址]
 
 根据文本检测多个站点:
 ./JsonExp -uf [目标.txt] -l [LDAP服务地址]
@@ -67,19 +75,64 @@ chmod +x JsonExp
 
 ![](img/3.png)
 
+
+
 ### LDAP检测
 
-若为**内网环境**/**目标无法DNS解析**时，可使用工具在 **本地/云服务器**起一个LDAP服务
+若为**内网环境**/**目标无法DNS解析**时，可使用工具在**本地/云服务器**起一个LDAP服务
 
 https://github.com/WhiteHSBG/JNDIExploit
 
-![](img/4.png)将**域名**换成**IP:端口**即可（上图中使用的是8090作为LDAP服务端口）
+![](img/4.png)
+
+将**域名**换成**IP:端口**即可（上图中使用的是8090作为LDAP服务端口）
 
 ![](img/5.png)
 
 此时LDAP服务器可收到**路径**信息，可根据路径信息来定位触发漏洞的payload
 
 ![](img/6.png)
+
+### 请求包检测
+
+若使用`-req`参数进行检测时，需要设置需要检测的变量值位置
+
+将请求中需要检测的位置替换为`$payload$`，其余位置不变，保存为req.txt（文件名任意）
+
+**格式：**
+
+```json
+POST /xxx HTTP/1.1
+Host: xxx
+
+$payload$
+```
+
+然后通过`-req`指定该文件，根据请求包进行漏洞检测
+
+```
+JsonExp -req req.txt -l xxx.xxx.xxx
+```
+
+**示例：**
+
+![](img/8.png)
+
+![](img/9.png)
+
+![](img/10.png)
+
+**注意：**
+
+```
+1. $payload$必须英文小写
+2. 若$payload$指定多个位置时仍可检测漏洞，但无法定位具体的漏洞参数
+3. 若$payload$设置在请求头中，将无法检测
+4. 一个文件仅限一个请求包，出现多个请求包时将会出错
+5. 读取请求包文件时
+```
+
+
 
 ### Payload介绍
 
@@ -88,8 +141,8 @@ https://github.com/WhiteHSBG/JNDIExploit
 **格式：** `{.........$type$://$ip$/路径....}#注释内容`
 
 ```
-$type$	用于指定ldap或rmi服务类型
-$ip$	用于指定ldap地址或rmi地址
+$type$	用于指定ldap或rmi服务类型（必须小写）
+$ip$	用于指定ldap地址或rmi地址（必须小写）
 路径	若LDAP服务器地址为IP时，需要通过不同的路径来定位触发漏洞的payload
 ```
 
@@ -100,6 +153,7 @@ $ip$	用于指定ldap地址或rmi地址
 2. payload必须写在注释的前面
 3. 注释符#及其之后的内容，将会在检测时被忽略
 4. 若payload为多行，则需将其中的换行符删去，保证一个payload占据一行
+5. $type$和$ip$必须英文小写
 ```
 
 ### 结果展示功能
@@ -109,3 +163,4 @@ $ip$	用于指定ldap地址或rmi地址
 执行程序后，将会在`result`目录下生成`域名.html`或`ip.html`文件
 
 ![](img/7.png)
+
