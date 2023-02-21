@@ -4,7 +4,7 @@
 
 **项目：** https://github.com/smallfox233/JsonExp
 
-**版本：** 1.3
+**版本：** 1.3.1
 
 ```
 1. 根据现有payload，检测目标是否存在fastjson或jackson漏洞（工具仅用于检测漏洞）
@@ -14,17 +14,18 @@
 
 ## 使用
 
-| 参数 | 别名      | 作用                                             | 例子                                |
-| ---- | --------- | ------------------------------------------------ | ----------------------------------- |
-| -u   | --url     | 指定目标url                                      | -u http://www.test.com              |
-| -uf  | --urlfile | 指定目标url文档，每行一个url                     | -uf url.txt                         |
-| -req | --request | 指定请求包                                       | -req request.txt                    |
-| -to  | --timeout | 指定请求超时时长，默认为5秒                      | -to 8                               |
-| -f   | --file    | 指定payload文本路径，默认为template/fastjson.txt | -f payload.txt                      |
-| -t   | --type    | 指定HTTP请求类型，默认为post                     | -t get                              |
-| -l   | --ldap    | 指定ldap地址                                     | -l xxx.xxx.xxx:8080                 |
-| -r   | --rmi     | 指定rmi地址                                      | -r xxx.xxx.xxx:8080                 |
-| -c   | --cookie  | 指定cookie值                                     | --cookie "name=xxx;sessionid=xxxxx" |
+| 参数 | 别名       | 作用                                                       | 例子                                |
+| ---- | ---------- | ---------------------------------------------------------- | ----------------------------------- |
+| -u   | --url      | 指定目标url                                                | -u http://www.test.com              |
+| -uf  | --urlfile  | 指定目标url文档，每行一个url                               | -uf url.txt                         |
+| -req | --request  | 指定请求包                                                 | -req request.txt                    |
+| -to  | --timeout  | 指定请求超时时长，默认为5秒                                | -to 8                               |
+| -f   | --file     | 指定payload文本路径，默认为template/fastjson.txt           | -f payload.txt                      |
+| -t   | --type     | 指定HTTP请求类型，默认为post                               | -t get                              |
+| -l   | --ldap     | 指定ldap地址                                               | -l xxx.xxx.xxx:8080                 |
+| -r   | --rmi      | 指定rmi地址                                                | -r xxx.xxx.xxx:8080                 |
+| -c   | --cookie   | 指定cookie值                                               | --cookie "name=xxx;sessionid=xxxxx" |
+| -pro | --protocol | 指定请求包所使用的协议，需结合-req参数使用，默认为http协议 | -req request.txt -pro https         |
 
 **windows系统**
 
@@ -129,6 +130,7 @@ JsonExp -req req.txt -l xxx.xxx.xxx
 2. 若$payload$指定多个位置时仍可检测漏洞，但无法定位具体的漏洞参数
 3. 若$payload$设置在请求头中，将无法检测
 4. 一个文件仅限一个请求包，出现多个请求包时将会出错
+5. 发送时默认采用http协议，若请求包为https协议，需使用-pro https来指定协议类型
 ```
 
 
