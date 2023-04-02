@@ -4,7 +4,7 @@
 
 **项目：** https://github.com/smallfox233/JsonExp
 
-**版本：** 1.3.2
+**版本：** 1.3.3
 
 ```
 1. 根据现有payload，检测目标是否存在fastjson或jackson漏洞（工具仅用于检测漏洞）
@@ -15,18 +15,19 @@
 
 ## 使用
 
-| 参数 | 别名       | 作用                                                       | 例子                                |
-| ---- | ---------- | ---------------------------------------------------------- | ----------------------------------- |
-| -u   | --url      | 指定目标url                                                | -u http://www.test.com              |
-| -uf  | --urlfile  | 指定目标url文档，每行一个url                               | -uf url.txt                         |
-| -req | --request  | 指定请求包                                                 | -req request.txt                    |
-| -to  | --timeout  | 指定请求超时时长，默认为5秒                                | -to 8                               |
-| -f   | --file     | 指定payload文本路径，默认为template/fastjson.txt           | -f payload.txt                      |
-| -t   | --type     | 指定HTTP请求类型，默认为post                               | -t get                              |
-| -l   | --ldap     | 指定ldap地址                                               | -l xxx.xxx.xxx:8080                 |
-| -r   | --rmi      | 指定rmi地址                                                | -r xxx.xxx.xxx:8080                 |
-| -c   | --cookie   | 指定cookie值                                               | --cookie "name=xxx;sessionid=xxxxx" |
-| -pro | --protocol | 指定请求包所使用的协议，需结合-req参数使用，默认为http协议 | -req request.txt -pro https         |
+| 参数   | 别名       | 作用                                                       | 例子                                |
+| ------ | ---------- | ---------------------------------------------------------- | ----------------------------------- |
+| -u     | --url      | 指定目标url                                                | -u http://www.test.com              |
+| -uf    | --urlfile  | 指定目标url文档，每行一个url                               | -uf url.txt                         |
+| -req   | --request  | 指定请求包                                                 | -req request.txt                    |
+| -to    | --timeout  | 指定请求超时时长，默认为5秒                                | -to 8                               |
+| -f     | --file     | 指定payload文本路径，默认为template/fastjson.txt           | -f payload.txt                      |
+| -t     | --type     | 指定HTTP请求类型，默认为post                               | -t get                              |
+| -l     | --ldap     | 指定ldap地址                                               | -l xxx.xxx.xxx:8080                 |
+| -r     | --rmi      | 指定rmi地址                                                | -r xxx.xxx.xxx:8080                 |
+| -c     | --cookie   | 指定cookie值                                               | --cookie "name=xxx;sessionid=xxxxx" |
+| -pro   | --protocol | 指定请求包所使用的协议，需结合-req参数使用，默认为http协议 | -req request.txt -pro https         |
+| -proxy | --proxy    | 设置代理                                                   | --proxy http://127.0.0.1:8080       |
 
 **windows系统**
 
@@ -166,3 +167,18 @@ $ip$	用于指定ldap地址或rmi地址（必须小写）
 
 ![](img/7.png)
 
+### 代理设置
+
+使用`--proxy`设置代理，可用于调试信息、绕waf等操作
+
+```shell
+--proxy http://127.0.0.1:8080
+```
+
+burpsuite中设置代理
+
+![](img/11.png)
+
+将工具的流量代理到burpsuite中（此工具不能适应所有的情况，可通过该方式对payload进行适当调整）
+
+![](img/12.png)
