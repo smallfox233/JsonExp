@@ -4,7 +4,7 @@
 
 **项目：** https://github.com/smallfox233/JsonExp
 
-**版本：** 1.3.3
+**版本：** 1.3.4
 
 ```
 1. 根据现有payload，检测目标是否存在fastjson或jackson漏洞（工具仅用于检测漏洞）
