@@ -1,5 +1,7 @@
 ## 简介
 
+![](https://socialify.git.ci/smallfox233/JsonExp/image?description=1&font=Inter&forks=1&name=1&owner=1&pattern=Brick%20Wall&stargazers=1&theme=Light)
+
 **作者：** 小狐狸FM
 
 **项目：** https://github.com/smallfox233/JsonExp
