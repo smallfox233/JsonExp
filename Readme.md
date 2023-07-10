@@ -1,6 +1,6 @@
 ## 简介
 
-![](https://socialify.git.ci/smallfox233/JsonExp/image?description=1&font=Inter&forks=1&name=1&owner=1&pattern=Brick%20Wall&stargazers=1&theme=Light)
+![](https://socialify.git.ci/smallfox233/JsonExp/image?font=Inter&forks=1&language=1&name=1&owner=1&pattern=Brick%20Wall&stargazers=1&theme=Auto)
 
 **作者：** 小狐狸FM
 
