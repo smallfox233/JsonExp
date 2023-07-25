@@ -6,7 +6,7 @@
 
 **项目：** https://github.com/smallfox233/JsonExp
 
-**版本：** 1.3.5
+**版本：** 1.3.6
 
 ```
 1. 根据现有payload，检测目标是否存在fastjson或jackson漏洞（工具仅用于检测漏洞）
@@ -60,6 +60,19 @@ chmod +x JsonExp
 
 根据文本检测多个站点:
 ./JsonExp -uf [目标.txt] -l [LDAP服务地址]
+```
+
+**Mac系统**
+
+```
+检测单个站点:
+JsonExp -u [目标] -l [LDAP服务地址]
+
+根据请求包检测单个站点：
+JsonExp -req [目标.txt] -l [LDAP服务地址]
+
+根据文本检测多个站点:
+JsonExp -uf [目标.txt] -l [LDAP服务地址]
 ```
 
 
