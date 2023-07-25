@@ -66,13 +66,13 @@ chmod +x JsonExp
 
 ```
 检测单个站点:
-JsonExp -u [目标] -l [LDAP服务地址]
+JsonExp_mac -u [目标] -l [LDAP服务地址]
 
 根据请求包检测单个站点：
-JsonExp -req [目标.txt] -l [LDAP服务地址]
+JsonExp_mac -req [目标.txt] -l [LDAP服务地址]
 
 根据文本检测多个站点:
-JsonExp -uf [目标.txt] -l [LDAP服务地址]
+JsonExp_mac -uf [目标.txt] -l [LDAP服务地址]
 ```
 
 
