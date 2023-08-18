@@ -6,10 +6,10 @@
 
 **项目：** https://github.com/smallfox233/JsonExp
 
-**版本：** 1.3.6
+**版本：** 1.4.0
 
 ```
-1. 根据现有payload，检测目标是否存在fastjson或jackson漏洞（工具仅用于检测漏洞）
+1. 根据现有payload，检测目标是否存在fastjson或jackson漏洞（工具仅用于检测漏洞、定位payload）
 2. 若存在漏洞，可根据对应payload进行后渗透利用
 3. 若出现新的漏洞时，可将最新的payload新增至txt中（需修改格式）
 4. 工具无法完全替代手工检测，仅作为辅助工具使用
@@ -17,19 +17,20 @@
 
 ## 使用
 
-| 参数   | 别名       | 作用                                                       | 例子                                |
-| ------ | ---------- | ---------------------------------------------------------- | ----------------------------------- |
-| -u     | --url      | 指定目标url                                                | -u http://www.test.com              |
-| -uf    | --urlfile  | 指定目标url文档，每行一个url                               | -uf url.txt                         |
-| -req   | --request  | 指定请求包                                                 | -req request.txt                    |
-| -to    | --timeout  | 指定请求超时时长，默认为5秒                                | -to 8                               |
-| -f     | --file     | 指定payload文本路径，默认为template/fastjson.txt           | -f payload.txt                      |
-| -t     | --type     | 指定HTTP请求类型，默认为post                               | -t get                              |
-| -l     | --ldap     | 指定ldap地址                                               | -l xxx.xxx.xxx:8080                 |
-| -r     | --rmi      | 指定rmi地址                                                | -r xxx.xxx.xxx:8080                 |
-| -c     | --cookie   | 指定cookie值                                               | --cookie "name=xxx;sessionid=xxxxx" |
-| -pro   | --protocol | 指定请求包所使用的协议，需结合-req参数使用，默认为http协议 | -req request.txt -pro https         |
-| -proxy | --proxy    | 设置代理                                                   | --proxy http://127.0.0.1:8080       |
+| 参数    | 别名       | 作用                                                       | 例子                                |
+| ------- | ---------- | ---------------------------------------------------------- | ----------------------------------- |
+| -u      | --url      | 指定目标url                                                | -u http://www.test.com              |
+| -uf     | --urlfile  | 指定目标url文档，每行一个url                               | -uf url.txt                         |
+| -req    | --request  | 指定请求包                                                 | -req request.txt                    |
+| -to     | --timeout  | 指定请求超时时长，默认为5秒                                | -to 8                               |
+| -f      | --file     | 指定payload文本路径，默认为template/fastjson.txt           | -f payload.txt                      |
+| -t      | --type     | 指定HTTP请求类型，默认为post                               | -t get                              |
+| -l      | --ldap     | 指定ldap地址                                               | -l xxx.xxx.xxx:8080                 |
+| -r      | --rmi      | 指定rmi地址                                                | -r xxx.xxx.xxx:8080                 |
+| -c      | --cookie   | 指定cookie值                                               | --cookie "name=xxx;sessionid=xxxxx" |
+| -pro    | --protocol | 指定请求包所使用的协议，需结合-req参数使用，默认为http协议 | -req request.txt -pro https         |
+| -proxy  | --proxy    | 设置代理                                                   | --proxy http://127.0.0.1:8080       |
+| -dnslog | --dnslog   | 是否申请dnslog进行检测，默认为false（此功能需挂全局代理）  | --dnslog true                       |
 
 **windows系统**
 
@@ -66,22 +67,26 @@ chmod +x JsonExp_linux
 
 ```
 检测单个站点:
-JsonExp_mac -u [目标] -l [LDAP服务地址]
+./JsonExp_mac -u [目标] -l [LDAP服务地址]
 
 根据请求包检测单个站点：
-JsonExp_mac -req [目标.txt] -l [LDAP服务地址]
+./JsonExp_mac -req [目标.txt] -l [LDAP服务地址]
 
 根据文本检测多个站点:
-JsonExp_mac -uf [目标.txt] -l [LDAP服务地址]
+./JsonExp_mac -uf [目标.txt] -l [LDAP服务地址]
 ```
 
 
 
 ### DNSlog检测
 
+#### 自定义地址
+
 ![](img/1.png)
 
 若出现dnslog回弹，可根据前面的编号去寻找对应的payload
+
+自**1.4.0版本**起，编号由7-9位的**随机数字+字母**组成
 
 ```
 编号.地址
@@ -93,7 +98,19 @@ JsonExp_mac -uf [目标.txt] -l [LDAP服务地址]
 
 ![](img/3.png)
 
+#### 随机地址
 
+自**1.4.0版本**新增功能，参考自[pocsuite3](https://github.com/knownsec/pocsuite3)
+
+需挂**全局代理**才能访问并申请资源，**使用此功能将对发包速度产生较大影响。**
+
+![](img/13.png)
+
+若存在dnslog回弹结果，将会生成`/result/xxx_dnslog.html`文件，没触发dnslog则不会生成该文件。
+
+![](img/14.png)
+
+![](img/15.png)
 
 ### LDAP检测
 
