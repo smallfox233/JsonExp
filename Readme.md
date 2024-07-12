@@ -36,20 +36,20 @@ python3 JsonExp.py -uf [目标.txt] -l [LDAP服务地址]
 
 
 
-| 参数    | 别名       | 作用                                                       | 例子                                |
-| ------- | ---------- | ---------------------------------------------------------- | ----------------------------------- |
-| -u      | --url      | 指定目标url                                                | -u http://www.test.com              |
-| -uf     | --urlfile  | 指定目标url文档，每行一个url                               | -uf url.txt                         |
-| -req    | --request  | 指定请求包                                                 | -req request.txt                    |
-| -to     | --timeout  | 指定请求超时时长，默认为5秒                                | -to 8                               |
-| -f      | --file     | 指定payload文本路径，默认为template/fastjson.txt           | -f payload.txt                      |
-| -t      | --type     | 指定HTTP请求类型，默认为post                               | -t get                              |
-| -l      | --ldap     | 指定ldap地址                                               | -l xxx.xxx.xxx:8080                 |
-| -r      | --rmi      | 指定rmi地址                                                | -r xxx.xxx.xxx:8080                 |
-| -c      | --cookie   | 指定cookie值                                               | --cookie "name=xxx;sessionid=xxxxx" |
-| -pro    | --protocol | 指定请求包所使用的协议，需结合-req参数使用，默认为http协议 | -req request.txt -pro https         |
-| -proxy  | --proxy    | 设置代理                                                   | --proxy http://127.0.0.1:8080       |
-| -dnslog | --dnslog   | 是否申请dnslog进行检测，默认为false（此功能需挂全局代理）  | --dnslog true                       |
+| 参数    | 别名       | 作用                                     | 例子                                |
+| ------- | ---------- |----------------------------------------| ----------------------------------- |
+| -u      | --url      | 指定目标url                                | -u http://www.test.com              |
+| -uf     | --urlfile  | 指定目标url文档，每行一个url                      | -uf url.txt                         |
+| -req    | --request  | 指定请求包                                  | -req request.txt                    |
+| -to     | --timeout  | 指定请求超时时长，默认为10秒                        | -to 8                               |
+| -f      | --file     | 指定payload文本路径，默认为template/fastjson.txt | -f payload.txt                      |
+| -t      | --type     | 指定HTTP请求类型，默认为post                     | -t get                              |
+| -l      | --ldap     | 指定ldap地址                               | -l xxx.xxx.xxx:8080                 |
+| -r      | --rmi      | 指定rmi地址                                | -r xxx.xxx.xxx:8080                 |
+| -c      | --cookie   | 指定cookie值                              | --cookie "name=xxx;sessionid=xxxxx" |
+| -pro    | --protocol | 指定请求包所使用的协议，需结合-req参数使用，默认为http协议      | -req request.txt -pro https         |
+| -proxy  | --proxy    | 设置代理                                   | --proxy http://127.0.0.1:8080       |
+| -dnslog | --dnslog   | 是否申请dnslog进行检测，默认为false（此功能需挂全局代理）     | --dnslog true                       |
 
 
 
