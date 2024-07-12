@@ -21,6 +21,9 @@
 ## 使用
 
 ```
+安装第三方库
+pip3 install -r requirement.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+
 检测单个站点:
 python3 JsonExp.py -u [目标] -l [LDAP服务地址]
 
