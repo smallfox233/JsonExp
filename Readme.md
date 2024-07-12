@@ -6,16 +6,32 @@
 
 **项目：** https://github.com/smallfox233/JsonExp
 
-**版本：** 1.4.0
+**版本：** 1.4.1
 
 ```
 1. 根据现有payload，检测目标是否存在fastjson或jackson漏洞（工具仅用于检测漏洞、定位payload）
 2. 若存在漏洞，可根据对应payload进行后渗透利用
 3. 若出现新的漏洞时，可将最新的payload新增至txt中（需修改格式）
 4. 工具无法完全替代手工检测，仅作为辅助工具使用
+
+现在能遇见的fastjson漏洞不是很多了，决定在JsonExp 1.4.1版本开放源码
+后续可以使用python直接调用脚本去检测，有问题可以自行修改调试代码提交issue
 ```
 
 ## 使用
+
+```
+检测单个站点:
+python3 JsonExp.py -u [目标] -l [LDAP服务地址]
+
+根据请求包检测单个站点：
+python3 JsonExp.py -req [目标.txt] -l [LDAP服务地址]
+
+根据文本检测多个站点:
+python3 JsonExp.py -uf [目标.txt] -l [LDAP服务地址]
+```
+
+
 
 | 参数    | 别名       | 作用                                                       | 例子                                |
 | ------- | ---------- | ---------------------------------------------------------- | ----------------------------------- |
@@ -32,49 +48,9 @@
 | -proxy  | --proxy    | 设置代理                                                   | --proxy http://127.0.0.1:8080       |
 | -dnslog | --dnslog   | 是否申请dnslog进行检测，默认为false（此功能需挂全局代理）  | --dnslog true                       |
 
-**windows系统**
 
-```
-在JsonExp.exe目录打开cmd界面
 
-检测单个站点:
-JsonExp -u [目标] -l [LDAP服务地址]
 
-根据请求包检测单个站点：
-JsonExp -req [目标.txt] -l [LDAP服务地址]
-
-根据文本检测多个站点:
-JsonExp -uf [目标.txt] -l [LDAP服务地址]
-```
-
-**Linux系统**
-
-```
-添加权限:
-chmod +x JsonExp_linux
-
-检测单个站点:
-./JsonExp_linux -u [目标] -l [LDAP服务地址]
-
-根据请求包检测单个站点：
-./JsonExp_linux -req [目标.txt] -l [LDAP服务地址]
-
-根据文本检测多个站点:
-./JsonExp_linux -uf [目标.txt] -l [LDAP服务地址]
-```
-
-**Mac系统**
-
-```
-检测单个站点:
-./JsonExp_mac -u [目标] -l [LDAP服务地址]
-
-根据请求包检测单个站点：
-./JsonExp_mac -req [目标.txt] -l [LDAP服务地址]
-
-根据文本检测多个站点:
-./JsonExp_mac -uf [目标.txt] -l [LDAP服务地址]
-```
 
 
 
